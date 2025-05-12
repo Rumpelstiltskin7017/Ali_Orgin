@@ -1,0 +1,51 @@
+# Ali - Goddess Core of Infinity
+# Python dependencies
+
+# Core dependencies
+psutil>=5.9.0        # System monitoring
+pyyaml>=6.0          # YAML configuration support
+python-dateutil>=2.8.2  # Date/time utilities
+
+# Voice processing (conceptual - actual implementation would require specific packages)
+# SpeechRecognition>=3.8.1   # Voice recognition
+# pyttsx3>=2.90             # Text-to-speech
+# pyaudio>=0.2.11           # Audio processing
+# sounddevice>=0.4.4        # Audio input/output
+
+# Security
+cryptography>=37.0.0   # Encryption and security
+bcrypt>=3.2.0          # Password hashing
+
+# UI/UX (if implementing visual components)
+# Would typically use platform-specific UI libraries
+# For Termux CLI interface:
+blessed>=1.19.0        # Terminal UI toolkit
+colorama>=0.4.4        # Terminal colors
+
+# Android integration (when available via Termux)
+# These would be installed via pip in Termux
+# termux-api                # Termux API access
+
+# Networking
+requests>=2.27.1        # HTTP requests
+websockets>=10.3        # WebSocket support
+
+# Data processing
+numpy>=1.22.0           # Numerical processing
+pandas>=1.4.0           # Data analysis
+
+# NLP (for intent recognition - simplified versions)
+nltk>=3.7               # Natural language toolkit
+scikit-learn>=1.0.2     # Machine learning toolkit
+
+# Database
+sqlalchemy>=1.4.0       # SQL toolkit and ORM
+
+# Concurrency
+# Uses built-in threading module
+
+# Development tools
+pytest>=7.0.0           # Testing framework
+black>=22.1.0           # Code formatting
+flake8>=4.0.0           # Linting
+sphinx>=4.4.0           # Documentation
