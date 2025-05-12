@@ -16,3 +16,25 @@ _site/
 # counterproductive to check this file into the repository.
 # Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
+#echo
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.env
+*.log
+
+# Termux / Android
+.termux/
+storage/
+*.apk
+*.dex
+*.jar
+
+# Node/JS if added
+node_modules/
+npm-debug.log*
+
+# System
+.DS_Store
+Thumbs.db
