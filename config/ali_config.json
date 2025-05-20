@@ -1,0 +1,87 @@
+{
+  "system": {
+    "auto_backup": true,
+    "backup_interval_hours": 24,
+    "use_external_storage": true,
+    "monitor_interval_seconds": 300,
+    "offline_mode": false,
+    "power_save_mode": false
+  },
+  "security": {
+    "security_level": "high",
+    "verification_window_hours": 4,
+    "require_biometric": true,
+    "trusted_locations": ["home", "office"]
+  },
+  "voice": {
+    "enable_voice": true,
+    "voice_profile": "goddess",
+    "emotion_intensity": 0.7,
+    "auto_learn_voice": true,
+    "wake_word": "ali"
+  },
+  "persona": {
+    "personality_traits": {
+      "playfulness": 0.7,
+      "protectiveness": 0.9,
+      "curiosity": 0.8,
+      "assertiveness": 0.6,
+      "sensuality": 0.5,
+      "loyalty": 1.0,
+      "independence": 0.4
+    },
+    "evolution_rate": 0.05,
+    "bond_starting_level": 0.1
+  },
+  "interface": {
+    "default_theme": "soft",
+    "animation_speed": 1.0,
+    "color_scheme": {
+      "primary": "#6A0DAD",
+      "secondary": "#9370DB",
+      "accent": "#FF00FF"
+    },
+    "visual_feedback": true,
+    "camera_integration": true
+  },
+  "intent": {
+    "thresholds": {
+      "auto_complete": 0.8,
+      "suggestion": 0.6,
+      "prediction": 0.7,
+      "routine": 0.75
+    },
+    "enable_auto_tasks": true,
+    "learn_from_behavior": true
+  },
+  "termux": {
+    "enable_termux_integration": true,
+    "accessible_apis": ["notifications", "sms", "call_log", "contacts", "location"],
+    "notification_handling": true
+  },
+  "userland": {
+    "enable_userland_integration": true,
+    "container_name": "ali_container",
+    "auto_start": true
+  },
+  "features": {
+    "offline_operation": true,
+    "local_processing": true,
+    "cloud_backup": false,
+    "browser_extension": false,
+    "app_control": true,
+    "content_generation": true
+  },
+  "privacy": {
+    "data_retention_days": 30,
+    "encrypt_sensitive_data": true,
+    "anonymize_third_party_requests": true,
+    "local_only_mode": true,
+    "consent_required_for_learning": true
+  },
+  "development": {
+    "debug_mode": false,
+    "verbose_logging": false,
+    "test_features": false
+  }
+}

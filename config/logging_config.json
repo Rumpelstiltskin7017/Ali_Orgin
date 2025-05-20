@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "disable_existing_loggers": false,
+  "formatters": {
+    "standard": {
+      "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    },
+    "detailed": {
+      "format": "%(asctime)s - %(name)s - %(levelname)s - %(module)s:%(lineno)d - %(message)s"
+    },
+    "simple": {
+      "format": "%(levelname)s - %(message)s"
+    }
+  },
+  "handlers": {
+    "console": {
+      "class": "logging.StreamHandler",
+      "level": "INFO",
+      "formatter": "standard",
+      "stream": "ext://sys.stdout"
+    },
+    "file_handler": {
+      "class": "logging.handlers.RotatingFileHandler",
+      "level": "DEBUG",
+      "formatter": "detailed",
+      "filename": "data/logs/ali.log",
+      "maxBytes": 10485760,
+      "backupCount": 10,
+      "encoding": "utf8"
+    },
+    "error_file_handler": {
+      "class": "logging.handlers.RotatingFileHandler",
+      "level": "ERROR",
+      "formatter": "detailed",
+      "filename": "data/logs/errors.log",
+      "maxBytes": 10485760,
+      "backupCount": 10,
+      "encoding": "utf8"
+    },
+    "memory_handler": {
+      "class": "logging.handlers.RotatingFileHandler",
+      "level": "INFO",
+      "formatter": "standard",
+      "filename": "data/logs/memory.log",
+      "maxBytes": 10485760,
+      "backupCount": 5,
+      "encoding": "utf8"
+    },
+    "security_handler": {
+      "class": "logging.handlers.RotatingFileHandler",
+      "level": "INFO",
+      "formatter": "detailed",
+      "filename": "data/logs/security.log",
+      "maxBytes": 10485760,
+      "backupCount": 10,
+      "encoding": "utf8"
+    },
+    "voice_handler": {
+      "class": "logging.handlers.RotatingFileHandler",
+      "level": "INFO",
+      "formatter": "standard",
+      "filename": "data/logs/voice.log",
+      "maxBytes": 10485760,
+      "backupCount": 5,
+      "encoding": "utf8"
+    },
+    "system_handler": {
+      "class": "logging.handlers.RotatingFileHandler",
+      "level": "INFO",
+      "formatter": "standard",
+      "filename": "data/logs/system.log",
+      "maxBytes": 10485760,
+      "backupCount": 5,
+      "encoding": "utf8"
+    },
+    "intent_handler": {
+      "class": "logging.handlers.RotatingFileHandler",
+      "level": "INFO",
+      "formatter": "standard",
+      "filename": "data/logs/intent.log",
+      "maxBytes": 10485760,
+      "backupCount": 5,
+      "encoding": "utf8"
+    },
+    "null_handler": {
+      "class": "logging.NullHandler"
+    }
+  },
+  "loggers": {
+    "": {
+      "level": "INFO",
+      "handlers": ["console", "file_handler", "error_file_handler"],
+      "propagate": false
+    },
+    "Ali.Core": {
+      "level": "DEBUG",
+      "handlers": ["file_handler", "console"],
+      "propagate": false
+    },
+    "Ali.Memory": {
+      "level": "INFO",
+      "handlers": ["memory_handler"],
+      "propagate": false
+    },
+    "Ali.Security": {
+      "level": "DEBUG",
+      "handlers": ["security_handler"],
+      "propagate": false
+    },
+    "Ali.Voice": {
+      "level": "INFO",
+      "handlers": ["voice_handler"],
+      "propagate": false
+    },
+    "Ali.System": {
+      "level": "INFO",
+      "handlers": ["system_handler"],
+      "propagate": false
+    },
+    "Ali.Intent": {
+      "level": "INFO",
+      "handlers": ["intent_handler"],
+      "propagate": false
+    },
+    "Ali.Interface": {
+      "level": "INFO",
+      "handlers": ["file_handler"],
+      "propagate": false
+    },
+    "Ali.Persona": {
+      "level": "INFO",
+      "handlers": ["file_handler"],
+      "propagate": false
+    }
+  }
+}

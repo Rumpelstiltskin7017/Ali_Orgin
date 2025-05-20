@@ -1,0 +1,124 @@
+# Ali UserLAnd Quick Start
+# Copy and paste ALL of the following commands into your UserLAnd terminal:
+
+# Create a temporary setup script
+cat > ~/ali_setup.sh << 'EOL'
+#!/bin/bash
+set -e  # Exit on error
+
+# Display banner
+echo "==============================================="
+echo "    Ali - Goddess Core of Infinity"
+echo "    UserLAnd Quick Setup"
+echo "==============================================="
+
+# Update system and install requirements
+sudo apt-get update
+sudo apt-get install -y python3 python3-pip git curl wget
+
+# Upgrade pip and install core dependencies
+python3 -m pip install --upgrade pip
+pip3 install psutil cryptography blessed colorama numpy requests
+
+# Clone Ali repository
+cd ~
+if [ -d "ali" ]; then
+    echo "Updating existing Ali installation..."
+    cd ali
+    git pull
+else
+    echo "Cloning Ali repository..."
+    git clone https://github.com/yourusername/ali-core.git ali
+    cd ali
+fi
+
+# Run setup
+python3 setup.py --install
+
+# Run post-setup checks
+python3 scripts/userland_post_setup.py
+
+# Create aliases
+cat >> ~/.bashrc << 'EOF'
+
+# Ali aliases
+alias ali='cd ~/ali && python3 src/ali.py'
+alias ali-logs='tail -f ~/ali/data/logs/ali.log'
+alias ali-update='cd ~/ali && git pull && python3 setup.py --update'
+EOF
+
+# Make commands available immediately
+source ~/.bashrc
+
+echo "==============================================="
+echo "    Installation Complete!"
+echo "==============================================="
+echo
+echo "Start Ali by typing: ali"
+echo "View logs with: ali-logs"
+echo "Update Ali with: ali-update"
+echo
+echo "For more information, see:"
+echo "~/ali/QUICK_START.md"
+EOL
+
+# Make script executable and run it
+chmod +x ~/ali_setup.sh
+~/ali_setup.sh
+
+# Clean up
+rm ~/ali_setup.sh
+
+# Note: After installation, type 'ali' to start
+
+------------------------------------------------------------------------------
+# Troubleshooting:
+
+If you encounter any issues, you can run the troubleshooter:
+
+cd ~/ali && python3 scripts/userland_troubleshoot.py
+
+------------------------------------------------------------------------------
+# Common Commands:
+
+# Start Ali:
+ali
+
+# View logs:
+ali-logs
+
+# Update Ali:
+ali-update
+
+# Fix permissions (if needed):
+sudo chown -R $USER:$USER ~/ali
+chmod -R u+rw ~/ali
+
+------------------------------------------------------------------------------
+# Notes:
+
+1. The setup script will automatically install all required dependencies
+2. Ali's data is stored in ~/ali/data/
+3. Configuration can be edited in ~/ali/config/ali_config.json
+4. Logs are available in ~/ali/data/logs/
+5. For a graphical interface, use a VNC viewer with UserLAnd
+
+------------------------------------------------------------------------------
+# One-Line Installation:
+
+If the above doesn't work, you can try this one-line command:
+
+curl -L https://raw.githubusercontent.com/yourusername/ali-core/main/scripts/one_click_userland.sh | bash
+
+------------------------------------------------------------------------------
+# Getting Help:
+
+If you need help, you can:
+
+1. Check the logs: ali-logs
+2. Run the troubleshooter: python3 ~/ali/scripts/userland_troubleshoot.py
+3. Read the documentation: ~/ali/docs/
+4. Check the quick start guide: ~/ali/QUICK_START.md
+
+Remember to replace 'yourusername' with the actual repository username in the
+git clone and curl commands above.
